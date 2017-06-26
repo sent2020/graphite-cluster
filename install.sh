@@ -27,6 +27,7 @@ sudo pip install --no-binary=:all: https://github.com/graphite-project/graphite-
 sudo cp ./carbon/carbon.conf /opt/graphite/conf
 sudo sed -ri "s/GRAPHITE_SERVER1_IP/$GRAPHITE_SERVER1_IP/g; s/GRAPHITE_SERVER2_IP/$GRAPHITE_SERVER2_IP/g" /opt/graphite/conf/carbon.conf
 sudo cp ./carbon/storage-schemas.conf /opt/graphite/conf
+sudo cp ./carbon/storage-aggregations.conf /opt/graphite/conf
 sudo cp ./carbon/whitelist.conf /opt/graphite/conf
 sudo cp ./carbon/relay-rules.conf /opt/graphite/conf
 sudo sed -ri "s/GRAPHITE_SERVER1_IP/$GRAPHITE_SERVER1_IP/g; s/GRAPHITE_SERVER2_IP/$GRAPHITE_SERVER2_IP/g" /opt/graphite/conf/relay-rules.conf
