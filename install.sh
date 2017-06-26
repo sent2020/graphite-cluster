@@ -40,7 +40,7 @@ sudo service memcached start
 # Setting up uwsgi
 sudo apt-get install uwsgi uwsgi-plugin-python --yes
 sudo cp /opt/graphite/conf/graphite.wsgi.example /opt/graphite/conf/wsgi.py
-cp ./uwsgi/apps-available/graphite.ini /etc/uwsgi/apps-available
+sudo cp ./uwsgi/apps-available/graphite.ini /etc/uwsgi/apps-available
 sudo ln -s /etc/uwsgi/apps-available/graphite.ini /etc/uwsgi/apps-enabled/graphite.ini
 
 # Settig up permissions
@@ -50,11 +50,11 @@ sudo chown -R _graphite:_graphite /opt/graphite/
 # Setting up nginx
 sudo apt-get install nginx --yes
 sudo service nginx stop
-cp ./nginx/sites-available/graphite /etc/nginx/sites-available
+sudo cp ./nginx/sites-available/graphite /etc/nginx/sites-available
 sudo ln -s /etc/nginx/sites-available/graphite /etc/nginx/sites-enabled/graphite
 
 # Setting up supervisor
 sudo apt-get install supervisor --yes
 sudo service supervisor stop
-cp ./supervisor/supervisord.conf /etc/supervisor/conf.d/
+sudo cp ./supervisor/supervisord.conf /etc/supervisor/conf.d/
 sudo service supervisor start
