@@ -36,7 +36,7 @@ sudo apt-get install memcached --yes
 sudo service memcached start
 
 # Setting up Graphite Web
-sudo cp ./graphite-web/local_settings.py /opt/graphite/webapp/graphite
+sudo cp ./graphite_web/local_settings.py /opt/graphite/webapp/graphite
 sudo sed -ri "s/GRAPHITE_SERVER1_IP/$GRAPHITE_SERVER1_IP/g; s/GRAPHITE_SERVER2_IP/$GRAPHITE_SERVER2_IP/g" /opt/graphite/webapp/graphite/local_settings.py
 sudo PYTHONPATH=/opt/graphite/webapp/ django-admin migrate  --settings=graphite.settings --run-syncdb
 
