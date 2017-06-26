@@ -3,7 +3,8 @@ upstream graphite {
 }                                                                                                     
                                                                                                       
 server {                                                                                              
-        listen 8888;                                                                                  
+        listen 8888;      
+        listen [::]:8888 default_server;
                                                                                                       
         charset utf-8;                                                                                
         access_log /var/log/nginx/graphite.access.log timed_combined;                                 
