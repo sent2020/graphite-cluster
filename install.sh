@@ -54,6 +54,7 @@ sudo service nginx stop
 sudo cp ./nginx/nginx.conf /etc/nginx
 sudo cp ./nginx/sites-available/graphite /etc/nginx/sites-available
 sudo ln -s /etc/nginx/sites-available/graphite /etc/nginx/sites-enabled/graphite
+sudo rm /etc/nginx/sites-enabled/default 
 sudo nginx -t
 
 # Setting up supervisor
