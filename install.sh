@@ -50,8 +50,10 @@ sudo chown -R _graphite:_graphite /opt/graphite/
 # Setting up nginx
 sudo apt-get install nginx --yes
 sudo service nginx stop
+sudo cp ./nginx/nginx.con /etc/nginx
 sudo cp ./nginx/sites-available/graphite /etc/nginx/sites-available
 sudo ln -s /etc/nginx/sites-available/graphite /etc/nginx/sites-enabled/graphite
+sudo nginx -t
 
 # Setting up supervisor
 sudo apt-get install supervisor --yes
