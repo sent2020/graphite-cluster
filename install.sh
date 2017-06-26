@@ -25,11 +25,11 @@ sudo pip install --no-binary=:all: https://github.com/graphite-project/graphite-
 
 # Setting up Carbon
 sudo cp ./carbon/carbon.conf /opt/graphite/conf
-sudo sed -ri "s/GRAPHITE_SERVER1_IP/$GRAPHITE_SERVER1_IP/g; s/GRAPHITE_SERVER2_IP/$GRAPHITE_SERVER2_IP/g" carbon.conf
+sudo sed -ri "s/GRAPHITE_SERVER1_IP/$GRAPHITE_SERVER1_IP/g; s/GRAPHITE_SERVER2_IP/$GRAPHITE_SERVER2_IP/g" /opt/graphite/conf/carbon.conf
 sudo cp ./carbon/storage-schemas.conf /opt/graphite/conf
 sudo cp ./carbon/whitelist.conf /opt/graphite/conf
 sudo cp ./carbon/relay-rules.conf /opt/graphite/conf
-sudo sed -ri "s/GRAPHITE_SERVER1_IP/$GRAPHITE_SERVER1_IP/g; s/GRAPHITE_SERVER2_IP/$GRAPHITE_SERVER2_IP/g" relay-rules.conf
+sudo sed -ri "s/GRAPHITE_SERVER1_IP/$GRAPHITE_SERVER1_IP/g; s/GRAPHITE_SERVER2_IP/$GRAPHITE_SERVER2_IP/g" /opt/graphite/conf/relay-rules.conf
 
 # Setting up memcached
 sudo apt-get install memcached --yes
@@ -37,7 +37,7 @@ sudo service memcached start
 
 # Setting up Graphite Web
 sudo cp ./graphite-web/local_settings.py /opt/graphite/webapp/graphite
-sudo sed -ri "s/GRAPHITE_SERVER1_IP/$GRAPHITE_SERVER1_IP/g; s/GRAPHITE_SERVER2_IP/$GRAPHITE_SERVER2_IP/g" local_settings.py
+sudo sed -ri "s/GRAPHITE_SERVER1_IP/$GRAPHITE_SERVER1_IP/g; s/GRAPHITE_SERVER2_IP/$GRAPHITE_SERVER2_IP/g" /opt/graphite/webapp/graphite/local_settings.py
 sudo PYTHONPATH=/opt/graphite/webapp/ django-admin migrate  --settings=graphite.settings --run-syncdb
 
 # Settig up permissions
