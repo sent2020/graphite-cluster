@@ -2,6 +2,16 @@
 GRAPHITE_SERVER1_IP="SERVERIP1"
 GRAPHITE_SERVER2_IP="SERVERIP2"
 
+if [ $1 ]
+  then
+        GRAPHITE_SERVER1_IP=$1
+fi
+
+if [ $2 ]
+  then
+        GRAPHITE_SERVER2_IP=$2
+fi
+
 # Updates
 sudo apt-get update
 
