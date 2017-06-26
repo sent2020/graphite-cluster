@@ -1,0 +1,34 @@
+upstream graphite {                                                                                   
+        server 127.0.0.1:5000 fail_timeout=0;                                                         
+}                                                                                                     
+                                                                                                      
+server {                                                                                              
+        listen 8888;                                                                                  
+                                                                                                      
+        charset utf-8;                                                                                
+        access_log /var/log/nginx/graphite.access.log timed_combined;                                 
+        error_log /var/log/nginx/graphite.error.log;                                                  
+                                                                                                      
+        root /opt/graphite/webapp/graphite;                                                           
+                                                                                                      
+        location /content {                                                                           
+                alias /opt/graphite/webapp/content;                                                   
+        }                                                                                             
+                                                                                                      
+        location /static {                                                                            
+                alias /opt/graphite/webapp/content;                                                   
+        }                                                                                             
+                                                                                                      
+        location / {                                                                                  
+                include uwsgi_params;                                                                 
+                uwsgi_pass graphite;                                                                  
+                #uwsgi_read_timeout 300s;                                                             
+                #uwsgi_buffer_size 32k;                                                               
+                #uwsgi_buffers 8 32k;                                                                 
+                #uwsgi_busy_buffers_size 32k;                                                         
+        }                                                                                             
+                                                                                                      
+        location /static/admin {                                                                      
+                alias /usr/lib/python2.7/dist-packages/django/contrib/admin/static/admin;             
+        }                                                                                             
+}                                                                                                     
