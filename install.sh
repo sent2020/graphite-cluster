@@ -10,7 +10,7 @@ sudo apt-get install python-pip  python-cairo python-django --yes
 sudo pip install cffi
 sudo pip install -r https://raw.githubusercontent.com/graphite-project/whisper/master/requirements.txt
 sudo pip install -r https://raw.githubusercontent.com/graphite-project/carbon/master/requirements.txt
-sudo pip install -r https://raw.githubusercontent.com/graphite-project/graphite-web/master/requirements.txt
+sudo pip install -r https://raw.githubusercontent.com/graphite-project/graphite-web/1.0.1/requirements.txt
 
 # Install Whisper, Carbon and Graphite Web
 export PYTHONPATH="/opt/graphite/lib/:/opt/graphite/webapp/"
