@@ -325,7 +325,7 @@ REMOTE_EXCLUDE_LOCAL = True
 #
 # You *should* use 127.0.0.1 here in most cases.
 #
-CARBONLINK_HOSTS = ["127.0.0.1:7102,127.0.0.1:7103"]
+CARBONLINK_HOSTS = ["127.0.0.1:7102","127.0.0.1:7103"]
 CARBONLINK_TIMEOUT = 1.0
 CARBONLINK_RETRY_DELAY = 0 # Seconds to blacklist a failed remote server
 #
