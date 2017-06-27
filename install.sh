@@ -56,7 +56,6 @@ sudo PYTHONPATH=/opt/graphite/webapp/ django-admin migrate  --settings=graphite.
 
 # Setting up memcached
 sudo apt-get install memcached --yes
-sudo service memcached start
 
 # Setting up uwsgi
 sudo apt-get install uwsgi uwsgi-plugin-python --yes
@@ -83,3 +82,10 @@ sudo nginx -t
 #sudo service supervisor stop
 #sudo cp ./supervisor/supervisord.conf /etc/supervisor/conf.d/
 #sudo service supervisor start
+
+sudo service memcached start
+sudo /opt/graphite/bin/carbon-cache.py --instance=a start
+sudo /opt/graphite/bin/carbon-cache.py --instance=b start
+sudo /opt/graphite/bin/carbon-relay.py --instance=a start
+sudo /usr/bin/uwsgi --ini /etc/uwsgi/apps-enabled/graphite.ini --pidfile /var/run/uwsgi.pid
+sudo service nginx start
