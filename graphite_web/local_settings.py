@@ -350,7 +350,7 @@ CARBONLINK_RETRY_DELAY = 0 # Seconds to blacklist a failed remote server
 
 # The replication factor to use with consistent hashing.
 # This should usually match the value configured in Carbon.
-REPLICATION_FACTOR = 2
+REPLICATION_FACTOR = 1
 
 
 #####################################
