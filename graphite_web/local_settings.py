@@ -50,7 +50,7 @@ DEBUG = False
 # You should not use the loopback address (127.0.0.1) here if using clustering
 # as every webapp in the cluster should use the exact same values to prevent
 # unneeded cache misses. Set to [] to disable caching of images and fetched data
-MEMCACHE_HOSTS = ['GRAPHITE_SERVER1_IP:11211', 'GRAPHITE_SERVER2_IP:11211']
+MEMCACHE_HOSTS = ['GRAPHITE_SERVER1_IP:11211', 'GRAPHITE_SERVER2_IP:11211', 'GRAPHITE_SERVER3_IP:11211']
 
 # Metric data and graphs are cached for one minute by default. If defined,
 # DEFAULT_CACHE_POLICY is a list of tuples of minimum query time ranges mapped
@@ -243,7 +243,7 @@ DATABASES = {
 # remote server in the cluster. These servers must each have local access to
 # metric data. Note that the first server to return a match for a query will be
 # used.
-CLUSTER_SERVERS = ["GRAPHITE_SERVER1_IP:8888","GRAPHITE_SERVER2_IP:8888"]
+CLUSTER_SERVERS = ["GRAPHITE_SERVER1_IP:8888","GRAPHITE_SERVER2_IP:8888","GRAPHITE_SERVER3_IP:8888"]
 
 # Creates a pool of worker threads to which tasks can be dispatched. This makes
 # sense if there are multiple CLUSTER_SERVERS because then the communication
