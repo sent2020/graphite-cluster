@@ -2,6 +2,17 @@
 GRAPHITE_SERVER1_IP="SERVERIP1"
 GRAPHITE_SERVER2_IP="SERVERIP2"
 
+RED='\033[0;31m';
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+CYAN='\033[0;36m'
+NC='\033[0m';
+
+ERR  (){  echo -e "${RED}$@${NC}"; }
+OK   (){  echo -e "${GREEN}$@${NC}";}
+WARN (){  echo -e "${YELLOW}$@${NC}"; }
+INFO (){  echo -e "${CYAN}$@${NC}"; }
+
 if [ $1 ]
   then
         GRAPHITE_SERVER1_IP=$1
