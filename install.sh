@@ -68,7 +68,7 @@ sudo rm /etc/nginx/sites-enabled/default
 sudo nginx -t
 
 # Setting up supervisor
-sudo apt-get install supervisor --yes
-sudo service supervisor stop
-sudo cp ./supervisor/supervisord.conf /etc/supervisor/conf.d/
-sudo service supervisor start
+#sudo apt-get install supervisor --yes
+#sudo service supervisor stop
+#sudo cp ./supervisor/supervisord.conf /etc/supervisor/conf.d/
+#sudo service supervisor start
