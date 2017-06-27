@@ -84,12 +84,12 @@ sudo rm /etc/nginx/sites-enabled/default
 sudo nginx -t
 
 # Starting Daemons
-sudo service memcached start
-sudo /opt/graphite/bin/carbon-cache.py --instance=a start
-sudo /opt/graphite/bin/carbon-cache.py --instance=b start
-sudo /opt/graphite/bin/carbon-relay.py --instance=a start
-sudo /usr/bin/uwsgi --ini /etc/uwsgi/apps-enabled/graphite.ini --pidfile /var/run/uwsgi.pid
-sudo service nginx start
+#sudo service memcached start
+#sudo /opt/graphite/bin/carbon-cache.py --instance=a start
+#sudo /opt/graphite/bin/carbon-cache.py --instance=b start
+#sudo /opt/graphite/bin/carbon-relay.py --instance=a start
+#sudo /usr/bin/uwsgi --ini /etc/uwsgi/apps-enabled/graphite.ini --pidfile /var/run/uwsgi.pid
+#sudo service nginx start
 
 # Setting up supervisor
 #sudo apt-get install supervisor --yes
